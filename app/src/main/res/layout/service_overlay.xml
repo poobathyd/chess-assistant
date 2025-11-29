@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_overlay_bubble">
+
+    <ImageView
+        android:id="@+id/ivOverlayIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_search"
+        android:contentDescription="Overlay Icon" />
+
+    <TextView
+        android:id="@+id/tvBestMove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="#AA000000"
+        android:textColor="#FFFFFF"
+        android:padding="4dp"
+        android:text="Ready"
+        android:textSize="14sp" />
+
+    <!-- This view will be used to draw arrows/lines -->
+    <com.example.chessassistant.OverlayView
+        android:id="@+id/overlayCanvas"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:visibility="gone" />
+
+</FrameLayout>

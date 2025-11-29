@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Chess Assistant</string>
+    <string name="start_service">Start Overlay</string>
+    <string name="stop_service">Stop Overlay</string>
+    <string name="permission_required">Overlay permission is required</string>
+    <string name="service_running">Overlay is running</string>
+</resources>
