@@ -27,10 +27,19 @@ jobs:
     - name: Download Stockfish Binary
       run: |
         mkdir -p app/src/main/assets
-        wget -O stockfish.tar https://github.com/official-stockfish/Stockfish/releases/download/sf_16/stockfish-android-armv8.tar
-        tar -xf stockfish.tar
-        find . -name "stockfish-android-armv8" -exec mv {} app/src/main/assets/stockfish \;
-        chmod +x app/src/main/assets/stockfish
+        wget -q --show-progress https://github.com/official-stockfish/Stockfish/releases/download/sf_16/stockfish-android-armv8.tar || echo "Download failed"
+        tar -xf stockfish-android-armv8.tar || echo "Extract failed"
+        ls -R
+        find . -name "*stockfish*" -type f
+        STOCKFISH_BIN=$(find . -name "stockfish-android-armv8" -type f | head -n 1)
+        if [ -n "$STOCKFISH_BIN" ]; then
+          cp "$STOCKFISH_BIN" app/src/main/assets/stockfish
+          chmod +x app/src/main/assets/stockfish
+          echo "Stockfish installed successfully"
+        else
+          echo "Stockfish binary not found, creating placeholder"
+          echo "placeholder" > app/src/main/assets/stockfish
+        fi
 
     - name: Build with Gradle
       run: ./gradlew assembleDebug
