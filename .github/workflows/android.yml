@@ -52,7 +52,7 @@ jobs:
         echo "Note: Replace with actual model for real detection"
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: ./gradlew clean assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
