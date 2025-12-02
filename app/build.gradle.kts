@@ -33,6 +33,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    
+    aaptOptions {
+        noCompress("tflite")  // Don't compress TFLite models
+    }
 }
 
 dependencies {
@@ -41,12 +45,15 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     
-    // OpenCV for Android (Note: You usually need to import the module or .aar manually, 
-    // but for this structure we assume it's available or we use a wrapper if possible.
-    // For now, we'll comment it out and assume the user adds the module, 
-    // or we use a standard library if one exists in maven.)
-    // implementation(project(":opencv")) 
+    // TensorFlow Lite for YOLO object detection
+    implementation("org.tensorflow:tensorflow-lite:2.14.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.14.0")  // GPU acceleration
     
-    // Coroutines
+    // OpenCV for board detection and preprocessing
+    implementation("org.opencv:opencv:4.9.0")
+    
+    // Coroutines for async operations
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }

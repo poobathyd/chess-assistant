@@ -41,6 +41,16 @@ jobs:
           echo "placeholder" > app/src/main/assets/stockfish
         fi
 
+    - name: Download Chess Piece Detection Model
+      run: |
+        echo "Downloading TFLite model for chess piece detection..."
+        # Download from Roboflow or create placeholder
+        # Using placeholder for now - replace with actual model URL when available
+        echo "Creating placeholder model file..."
+        dd if=/dev/zero of=app/src/main/assets/chess_yolo.tflite bs=1M count=8
+        echo "Model file created (placeholder - 8MB)"
+        echo "Note: Replace with actual model for real detection"
+
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 

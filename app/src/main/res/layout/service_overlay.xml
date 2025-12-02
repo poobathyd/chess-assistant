@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_overlay_bubble">
+    android:orientation="vertical"
+    android:background="@drawable/bg_overlay_bubble"
+    android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/ivOverlayIcon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@android:drawable/ic_menu_search"
-        android:contentDescription="Overlay Icon" />
-
+    <!-- Best Move Display (Large, prominent) -->
     <TextView
         android:id="@+id/tvBestMove"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:background="#AA000000"
+        android:text="Initializing..."
         android:textColor="#FFFFFF"
-        android:padding="4dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="8dp" />
+
+    <!-- Status Line (Board detected or not) -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Ready"
-        android:textSize="14sp" />
+        android:textColor="#AAAAAA"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:paddingBottom="4dp" />
 
-    <!-- This view will be used to draw arrows/lines -->
-    <com.example.chessassistant.OverlayView
-        android:id="@+id/overlayCanvas"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:visibility="gone" />
+    <!-- Confidence and Stats -->
+    <TextView
+        android:id="@+id/tvConfidence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Waiting for board..."
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:gravity="center" />
 
-</FrameLayout>
+</LinearLayout>
