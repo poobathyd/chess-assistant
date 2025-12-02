@@ -56,7 +56,8 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
     implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
     // implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4") // Not used, avoiding conflicts
-    implementation("org.tensorflow:tensorflow-lite-gpu:2.14.0")  // GPU acceleration
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.14.0")
+    implementation("org.tensorflow:tensorflow-lite-gpu-api:2.14.0") // Required for GpuDelegateFactory
     
     // OpenCV for board detection and preprocessing
     implementation("com.quickbirdstudios:opencv:4.5.3.0")
