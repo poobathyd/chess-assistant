@@ -24,7 +24,7 @@ object OpenCVLoaderUtil {
         }
         
         return try {
-            val success = OpenCVLoader.initLocal()
+            val success = OpenCVLoader.initDebug()
             if (success) {
                 isInitialized = true
                 val version = org.opencv.core.Core.VERSION

@@ -52,7 +52,7 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-gpu:2.14.0")  // GPU acceleration
     
     // OpenCV for board detection and preprocessing
-    implementation("org.opencv:opencv:4.9.0")
+    implementation("com.quickbirdstudios:opencv:4.5.3.0")
     
     // Coroutines for async operations
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
